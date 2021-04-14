@@ -261,11 +261,6 @@ export default async (context) => {
    * @return {string} Returns true if the browser language was detected.
    */
   const doDetectBrowserLanguage = route => {
-    // Browser detection is ignored if it is a nuxt generate.
-    if (process.static && process.server) {
-      return ''
-    }
-
     if (options.strategy !== Constants.STRATEGIES.NO_PREFIX) {
       if (onlyOnRoot) {
         if (route.path !== '/') {
